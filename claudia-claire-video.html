@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claudia Cl.AI.re — Hypotheekshop.ai Video</title>
+<meta name="description" content="Claudia Cl.AI.re vertelt over de toekomst van financieel advies. Hypotheekshop.ai — Cl.AI.re Finance.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#030810;font-family:"Segoe UI",Arial,sans-serif;overflow:hidden}
+* { -webkit-tap-highlight-color:transparent; }
+
+#player{position:relative;width:100vw;height:100vh;background:#030810;overflow:hidden}
+
+/* BG */
+.bg-grid{position:absolute;inset:0;z-index:0;opacity:0.05;
+  background-image:linear-gradient(rgba(244,123,32,0.5) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(244,123,32,0.5) 1px,transparent 1px);
+  background-size:80px 80px;animation:gd 40s linear infinite}
+@keyframes gd{0%{transform:translate(0,0)}100%{transform:translate(80px,80px)}}
+.orb{position:absolute;border-radius:50%;z-index:0;pointer-events:none}
+.orb1{width:800px;height:800px;background:radial-gradient(circle,rgba(244,123,32,0.07),transparent 65%);top:-250px;left:-200px;animation:ob 9s ease-in-out infinite}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(14,184,154,0.05),transparent 65%);bottom:-200px;right:-100px;animation:ob 12s ease-in-out infinite 4s}
+@keyframes ob{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.vignette{position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at center,transparent 20%,rgba(0,0,0,0.9) 100%)}
+.scanlines{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.07) 3px,rgba(0,0,0,0.07) 4px)}
+.beam{position:absolute;left:0;right:0;height:3px;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(244,123,32,0.5),rgba(255,255,255,0.7),rgba(244,123,32,0.5),transparent);
+  animation:bs 5s ease-in-out infinite;box-shadow:0 0 16px rgba(244,123,32,0.35)}
+@keyframes bs{0%{top:-4px;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:100%;opacity:0}}
+
+/* HOLOGRAM */
+#hw{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);z-index:10;width:clamp(220px,28vw,320px)}
+#sbadge{position:absolute;top:-32px;left:50%;transform:translateX(-50%);
+  display:inline-flex;align-items:center;gap:5px;background:rgba(13,34,64,0.9);
+  padding:4px 14px;border-radius:100px;font-size:10px;font-weight:700;color:white;
+  border:1px solid rgba(244,123,32,0.5);white-space:nowrap}
+#sled{width:6px;height:6px;border-radius:50%;background:#0EB89A;animation:pl 2s infinite}
+@keyframes pl{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(1.6)}}
+#hf{position:relative;border-radius:16px;overflow:hidden;
+  box-shadow:0 0 60px rgba(244,123,32,0.12),0 0 120px rgba(244,123,32,0.05);
+  animation:hfl 7s ease-in-out infinite}
+@keyframes hfl{0%,100%{opacity:1}49%{opacity:0.88}50%{opacity:1}89%{opacity:0.93}90%{opacity:1}}
+#hi{width:100%;display:block}
+#hf::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+  background:linear-gradient(180deg,rgba(244,123,32,0.06) 0%,transparent 20%,transparent 55%,rgba(0,0,0,0.82) 100%)}
+#hf::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(244,123,32,0.025) 3px,rgba(244,123,32,0.025) 4px)}
+.hc{position:absolute;width:22px;height:22px;z-index:6}
+.hc.tl{top:-1px;left:-1px;border-top:2px solid #F47B20;border-left:2px solid #F47B20;box-shadow:-2px -2px 12px rgba(244,123,32,0.6)}
+.hc.tr{top:-1px;right:-1px;border-top:2px solid #F47B20;border-right:2px solid #F47B20;box-shadow:2px -2px 12px rgba(244,123,32,0.6)}
+.hc.bl{bottom:-1px;left:-1px;border-bottom:2px solid #0D2240;border-left:2px solid #0D2240}
+.hc.br{bottom:-1px;right:-1px;border-bottom:2px solid #0D2240;border-right:2px solid #0D2240}
+#hn{position:absolute;bottom:6px;left:0;right:0;z-index:7;text-align:center;padding:0 8px}
+#hn .n1{font-size:clamp(15px,2.5vw,20px);font-weight:900;color:white;text-shadow:0 0 20px rgba(244,123,32,0.7);letter-spacing:-0.3px}
+#hn .ai{color:#F47B20;font-style:italic}
+#hn .n2{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#0EB89A;font-family:"Courier New",monospace;margin-top:2px}
+#wf{display:flex;align-items:center;gap:2px;justify-content:center;padding:5px 0;height:24px;background:rgba(13,34,64,0.4)}
+.wb{width:3px;border-radius:2px;background:#F47B20;animation:wp 1.3s ease-in-out infinite}
+@keyframes wp{0%,100%{height:3px;opacity:0.4}50%{height:16px;opacity:1}}
+
+/* DATA BADGES */
+.db{position:absolute;z-index:20;background:rgba(255,255,255,0.96);
+  border:1.5px solid rgba(244,123,32,0.3);border-radius:8px;padding:7px 12px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.3);white-space:nowrap;
+  opacity:0;transform:translateY(8px);transition:opacity 0.5s,transform 0.5s}
+.db.show{opacity:1;transform:translateY(0)}
+.dbl{font-size:9px;color:#9AA5B4;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.dbv{font-family:"Courier New",monospace;font-size:12px;font-weight:700;color:#0D2240}
+
+/* SCENE HEADER */
+#sh{position:absolute;top:clamp(20px,4vh,36px);left:50%;transform:translateX(-50%);
+  z-index:20;text-align:center;min-width:260px;transition:opacity 0.5s}
+#sn{font-size:10px;font-weight:700;letter-spacing:3px;color:#F47B20;
+  text-transform:uppercase;font-family:"Courier New",monospace;margin-bottom:4px}
+#st{font-size:clamp(16px,2.5vw,22px);font-weight:900;color:white;text-shadow:0 2px 16px rgba(0,0,0,0.8)}
+#ss{font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px}
+.sdiv{width:44px;height:2px;background:#F47B20;margin:6px auto 0;border-radius:1px}
+
+/* SUBTITLE */
+#sub{position:absolute;bottom:clamp(90px,14vh,120px);left:50%;transform:translateX(-50%);
+  z-index:20;text-align:center;max-width:min(760px,90vw);width:90%;min-height:60px;
+  display:flex;align-items:center;justify-content:center}
+#st2{font-size:clamp(15px,2.8vw,24px);font-weight:500;color:white;line-height:1.55;
+  text-shadow:0 2px 10px rgba(0,0,0,0.95);opacity:0;transition:opacity 0.35s;white-space:pre-line}
+#st2.on{opacity:1}
+#st2 .hl{color:#F47B20;font-weight:700}
+
+/* PROGRESS */
+#pw{position:absolute;bottom:clamp(50px,8vh,68px);left:50%;transform:translateX(-50%);
+  z-index:25;width:min(88vw,860px)}
+#pt{height:3px;background:rgba(255,255,255,0.12);border-radius:2px;overflow:hidden;cursor:pointer}
+#pf{height:100%;background:linear-gradient(90deg,#F47B20,#FFB370);border-radius:2px;
+  width:0%;transition:width 0.15s linear;box-shadow:0 0 8px rgba(244,123,32,0.5)}
+#pips{display:flex;justify-content:space-between;margin-top:6px}
+.pip{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;
+  opacity:0.3;transition:opacity 0.3s;touch-action:manipulation;min-height:28px;justify-content:center}
+.pip.active{opacity:1}.pip.done{opacity:0.55}
+.pipdot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.3)}
+.pip.active .pipdot,.pip.done .pipdot{background:#F47B20}
+.pip.active .pipdot{box-shadow:0 0 6px rgba(244,123,32,0.9)}
+.piplbl{font-size:8px;color:rgba(255,255,255,0.35);font-family:"Courier New",monospace}
+.pip.active .piplbl{color:#F47B20}
+
+/* CONTROLS */
+#ctrls{position:absolute;bottom:clamp(12px,2vh,20px);left:50%;transform:translateX(-50%);
+  z-index:25;display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.cb{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);
+  border-radius:100px;padding:8px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);
+  cursor:pointer;transition:all 0.2s;font-family:"Segoe UI",Arial,sans-serif;
+  white-space:nowrap;touch-action:manipulation;min-height:38px}
+.cb:hover{background:rgba(244,123,32,0.2);border-color:rgba(244,123,32,0.5);color:white}
+#btnPlay{background:#F47B20;border-color:#F47B20;color:white;min-width:90px}
+#btnPlay:hover{background:#D96610}
+#td{font-family:"Courier New",monospace;font-size:11px;color:rgba(255,255,255,0.35)}
+
+/* WATERMARK */
+#wm{position:absolute;top:20px;right:clamp(16px,3vw,28px);z-index:20;opacity:0.5;
+  display:flex;align-items:center;gap:7px}
+#wmt{font-size:13px;font-weight:700;color:white;font-family:"Segoe UI",Arial,sans-serif}
+#wmt .ai{color:#F47B20;font-style:italic}
+
+/* OUTRO */
+#outro{position:absolute;inset:0;z-index:50;background:linear-gradient(135deg,#0D2240,#163059);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;
+  opacity:0;pointer-events:none;transition:opacity 1.2s;text-align:center}
+#outro.on{opacity:1;pointer-events:all}
+#ol{font-size:clamp(28px,6vw,46px);font-weight:900;color:white;margin-bottom:10px;font-family:"Segoe UI",Arial,sans-serif}
+#ol span{color:#F47B20;font-style:italic}
+#og{font-size:clamp(14px,2vw,18px);color:rgba(255,255,255,0.65);margin-bottom:32px;font-style:italic}
+#oc{background:#F47B20;color:white;border:none;padding:14px 32px;border-radius:100px;
+  font-size:15px;font-weight:700;cursor:pointer;font-family:"Segoe UI",Arial,sans-serif;
+  transition:all 0.2s;text-decoration:none;display:inline-block;touch-action:manipulation}
+#oc:hover{background:#D96610;transform:translateY(-2px)}
+#or{margin-top:12px;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;
+  border:none;background:transparent;font-family:"Segoe UI",Arial,sans-serif;
+  touch-action:manipulation;padding:8px 16px}
+#or:hover{color:white}
+
+/* PLAY GATE */
+#gate{position:absolute;inset:0;z-index:60;background:linear-gradient(135deg,#030810,#0D2240);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;text-align:center;cursor:pointer;transition:opacity 0.8s}
+#gate.out{opacity:0;pointer-events:none}
+#gl{font-size:clamp(24px,5vw,36px);font-weight:900;color:white;margin-bottom:6px;font-family:"Segoe UI",Arial,sans-serif}
+#gl .ai{color:#F47B20;font-style:italic}
+#gsub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:44px;max-width:340px;line-height:1.7}
+#pbtn{width:76px;height:76px;border-radius:50%;background:#F47B20;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:all 0.3s;
+  animation:pp 2s ease-in-out infinite;box-shadow:0 0 0 0 rgba(244,123,32,0.5);
+  touch-action:manipulation}
+@keyframes pp{0%{box-shadow:0 0 0 0 rgba(244,123,32,0.5)}70%{box-shadow:0 0 0 22px rgba(244,123,32,0)}100%{box-shadow:0 0 0 0 rgba(244,123,32,0)}}
+#pbtn:hover{transform:scale(1.1);background:#D96610}
+#pbtn svg{width:26px;height:26px;fill:white;margin-left:4px}
+#gtitle{margin-top:20px;font-size:16px;color:rgba(255,255,255,0.75);font-weight:600}
+#gdur{font-size:11px;color:rgba(255,255,255,0.3);margin-top:5px;font-family:"Courier New",monospace}
+#ginfo{margin-top:12px;font-size:10px;color:rgba(255,255,255,0.22);max-width:300px;line-height:1.6}
+
+/* SCENE FLASH */
+.flash{position:absolute;inset:0;z-index:40;background:rgba(244,123,32,0.1);
+  pointer-events:none;animation:fa 0.5s ease-out forwards}
+@keyframes fa{0%{opacity:0.8}100%{opacity:0}}
+
+@supports(padding:max(0px)){
+  #ctrls{padding-bottom:max(0px,env(safe-area-inset-bottom))}
+}
+@media(max-width:480px){
+  .db{display:none}
+  #sbadge{font-size:9px;padding:3px 10px}
+  #ctrls .cb:first-child,#ctrls .cb:last-child{display:none}
+}
+</style>
+</head>
+<body>
+<div id="player">
+  <div class="bg-grid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="vignette"></div>
+  <div class="scanlines"></div>
+  <div class="beam"></div>
+
+  <div id="wm">
+    <div id="wmt">Hypotheekshop<span class="ai">.ai</span></div>
+  </div>
+
+  <div id="sh">
+    <div id="sn">SC&Egrave;NE 01</div>
+    <div id="st">OPENING</div>
+    <div id="ss">De toekomst van financi&euml;el advies</div>
+    <div class="sdiv"></div>
+  </div>
+
+  <div id="hw">
+    <div id="sbadge">
+      <div id="sled"></div>
+      &#x2B21;&nbsp;Cl.AI.re Finance actief
+    </div>
+    <div id="hf">
+      <div class="hc tl"></div><div class="hc tr"></div>
+      <div class="hc bl"></div><div class="hc br"></div>
+      <img id="hi" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNTIwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImJnR3JhZCIgY3g9IjUwJSIgY3k9IjQwJSIgcj0iNjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFhM2E2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwYTE2MjgiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9InNraW5HcmFkIiBjeD0iNTAlIiBjeT0iMzUlIiByPSI1NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjVjOWEwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U4YTg3OCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iZmFjZUdsb3ciIGN4PSI1MCUiIGN5PSI1MCUiIHI9IjUwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGNDdCMjAiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGNDdCMjAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iaGFpckdyYWQiIGN4PSI1MCUiIGN5PSIyMCUiIHI9IjYwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzZDJhMWEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWEwZjA4Ii8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPGZpbHRlciBpZD0ic29mdEdsb3ciPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzIiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICAgIDxmaWx0ZXIgaWQ9ImhvbG9QdWxzZSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEuNSIvPgogICAgPC9maWx0ZXI+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN1aXRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlM2E1ZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwZDIyNDAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdsYXNzR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhOGQ4ZjAiIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzdhYjhlMCIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgoKICA8IS0tIEJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI1MjAiIGZpbGw9InVybCgjYmdHcmFkKSIvPgoKICA8IS0tIEFtYmllbnQgZ2xvdyBhcm91bmQgZmFjZSAtLT4KICA8ZWxsaXBzZSBjeD0iMjAwIiBjeT0iMjAwIiByeD0iMTQwIiByeT0iMTYwIiBmaWxsPSJ1cmwoI2ZhY2VHbG93KSIvPgoKICA8IS0tIEdyaWQgb3ZlcmxheSAoaG9sb2dyYW0gZWZmZWN0KSAtLT4KICA8ZyBvcGFjaXR5PSIwLjA0Ij4KICAgIDxsaW5lIHgxPSIwIiB5MT0iNDAiIHgyPSI0MDAiIHkyPSI0MCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iODAiIHgyPSI0MDAiIHkyPSI4MCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iNDAwIiB5Mj0iMTIwIiBzdHJva2U9IiNGNDdCMjAiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIxNjAiIHgyPSI0MDAiIHkyPSIxNjAiIHN0cm9rZT0iI0Y0N0IyMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjIwMCIgeDI9IjQwMCIgeTI9IjIwMCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMjQwIiB4Mj0iNDAwIiB5Mj0iMjQwIiBzdHJva2U9IiNGNDdCMjAiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIyODAiIHgyPSI0MDAiIHkyPSIyODAiIHN0cm9rZT0iI0Y0N0IyMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjMyMCIgeDI9IjQwMCIgeTI9IjMyMCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMzYwIiB4Mj0iNDAwIiB5Mj0iMzYwIiBzdHJva2U9IiNGNDdCMjAiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSI0MDAiIHgyPSI0MDAiIHkyPSI0MDAiIHN0cm9rZT0iI0Y0N0IyMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjQ0MCIgeDI9IjQwMCIgeTI9IjQ0MCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iNDgwIiB4Mj0iNDAwIiB5Mj0iNDgwIiBzdHJva2U9IiNGNDdCMjAiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwvZz4KCiAgPCEtLSBTdWl0IC8gYm9keSAtLT4KICA8cGF0aCBkPSJNIDYwIDUyMCBMIDYwIDM0MCBRIDgwIDMxMCAxMTAgMzAwIEwgMTUwIDI5MCBMIDIwMCAzMTAgTCAyNTAgMjkwIEwgMjkwIDMwMCBRIDMyMCAzMTAgMzQwIDM0MCBMIDM0MCA1MjAgWiIKICAgICAgICBmaWxsPSJ1cmwoI3N1aXRHcmFkKSIgb3BhY2l0eT0iMC45NSIvPgoKICA8IS0tIFN1aXQgbGFwZWxzIC0tPgogIDxwYXRoIGQ9Ik0gMjAwIDMxMCBMIDE2MCAyOTUgTCAxNDAgMzQwIEwgMTc1IDM1NSBaIiBmaWxsPSIjMGExZjNkIi8+CiAgPHBhdGggZD0iTSAyMDAgMzEwIEwgMjQwIDI5NSBMIDI2MCAzNDAgTCAyMjUgMzU1IFoiIGZpbGw9IiMwYTFmM2QiLz4KCiAgPCEtLSBTaGlydC9ibG91c2UgYXJlYSAtLT4KICA8cGF0aCBkPSJNIDE3NSAzNTUgTCAyMDAgMzQ1IEwgMjI1IDM1NSBMIDIxMCA0MzAgTCAxOTAgNDMwIFoiIGZpbGw9IiNkNGU4ZjUiIG9wYWNpdHk9IjAuOSIvPgoKICA8IS0tIFN1YnRsZSBzdWl0IGRldGFpbHMgLS0+CiAgPGxpbmUgeDE9IjEzNSIgeTE9IjM2MCIgeDI9IjE2MCIgeTI9IjQ1MCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC40Ii8+CiAgPGxpbmUgeDE9IjI2NSIgeTE9IjM2MCIgeDI9IjI0MCIgeTI9IjQ1MCIgc3Ryb2tlPSIjRjQ3QjIwIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC40Ii8+CgogIDwhLS0gTmVjayAtLT4KICA8cmVjdCB4PSIxODMiIHk9IjI2NSIgd2lkdGg9IjM0IiBoZWlnaHQ9IjUwIiByeD0iOCIgZmlsbD0iI2U4YTg3OCIvPgoKICA8IS0tIFNob3VsZGVycyAtLT4KICA8cGF0aCBkPSJNIDEyMCAyOTUgUSAxMDAgMjgwIDkwIDI2MCBRIDg1IDI0NSAxMDAgMjQ1IFEgMTMwIDI0OCAxNTUgMjY4IFoiIGZpbGw9IiNlOGE4NzgiLz4KICA8cGF0aCBkPSJNIDI4MCAyOTUgUSAzMDAgMjgwIDMxMCAyNjAgUSAzMTUgMjQ1IDMwMCAyNDUgUSAyNzAgMjQ4IDI0NSAyNjggWiIgZmlsbD0iI2U4YTg3OCIvPgoKICA8IS0tIEhhaXIgKGJhY2sgbGF5ZXIpIC0tPgogIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIxNTUiIHJ4PSIxMDAiIHJ5PSIxMDgiIGZpbGw9InVybCgjaGFpckdyYWQpIi8+CiAgPCEtLSBIYWlyIGZsb3cgZG93biBsZWZ0IC0tPgogIDxwYXRoIGQ9Ik0gMTA1IDE1NSBRIDkyIDIwMCA5NSAyNjAgUSAxMDAgMjkwIDExNSAyOTUgUSAxMDUgMjYwIDExMCAyMjAgUSAxMTIgMTk1IDExMiAxNzAgWiIKICAgICAgICBmaWxsPSIjMmExYTEwIiBvcGFjaXR5PSIwLjkiLz4KICA8IS0tIEhhaXIgZmxvdyBkb3duIHJpZ2h0IC0tPgogIDxwYXRoIGQ9Ik0gMjk1IDE1NSBRIDMwOCAyMDAgMzA1IDI2MCBRIDMwMCAyOTAgMjg1IDI5NSBRIDI5NSAyNjAgMjkwIDIyMCBRIDI4OCAxOTUgMjg4IDE3MCBaIgogICAgICAgIGZpbGw9IiMyYTFhMTAiIG9wYWNpdHk9IjAuOSIvPgoKICA8IS0tIEZhY2UgLS0+CiAgPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjE3NSIgcng9IjgyIiByeT0iOTIiIGZpbGw9InVybCgjc2tpbkdyYWQpIi8+CgogIDwhLS0gU3VidGxlIGNoZWVrIGJsdXNoIC0tPgogIDxlbGxpcHNlIGN4PSIxNTUiIGN5PSIxOTAiIHJ4PSIxOCIgcnk9IjEwIiBmaWxsPSIjZjBhMGEwIiBvcGFjaXR5PSIwLjIiLz4KICA8ZWxsaXBzZSBjeD0iMjQ1IiBjeT0iMTkwIiByeD0iMTgiIHJ5PSIxMCIgZmlsbD0iI2YwYTBhMCIgb3BhY2l0eT0iMC4yIi8+CgogIDwhLS0gRXllYnJvd3MgLS0+CiAgPHBhdGggZD0iTSAxNTUgMTQ4IFEgMTcwIDE0MyAxODUgMTQ3IiBzdHJva2U9IiMzZDJhMWEiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTSAyMTUgMTQ3IFEgMjMwIDE0MyAyNDUgMTQ4IiBzdHJva2U9IiMzZDJhMWEiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gRXllcyAobGVmdCkgLS0+CiAgPGVsbGlwc2UgY3g9IjE3MCIgY3k9IjE2MiIgcng9IjE2IiByeT0iMTEiIGZpbGw9IndoaXRlIi8+CiAgPGVsbGlwc2UgY3g9IjE3MiIgY3k9IjE2MyIgcng9IjkiIHJ5PSI5IiBmaWxsPSIjMWEzYTVmIi8+CiAgPGVsbGlwc2UgY3g9IjE3MyIgY3k9IjE2MyIgcng9IjYiIHJ5PSI2IiBmaWxsPSIjMGExNjI4Ii8+CiAgPGVsbGlwc2UgY3g9IjE3NiIgY3k9IjE2MCIgcng9IjIuNSIgcnk9IjIuNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOSIvPgogIDwhLS0gRXllIHNwYXJrbGUgLSBBSSB0ZWFsIGRvdCAtLT4KICA8ZWxsaXBzZSBjeD0iMTY2IiBjeT0iMTY1IiByeD0iMS41IiByeT0iMS41IiBmaWxsPSIjMEVCODlBIiBvcGFjaXR5PSIwLjgiLz4KICA8IS0tIEV5ZWxpZCBsaW5lIC0tPgogIDxwYXRoIGQ9Ik0gMTU0IDE2MiBRIDE3MCAxNTIgMTg2IDE2MiIgc3Ryb2tlPSIjM2QyYTFhIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIvPgogIDwhLS0gTGFzaGVzIC0tPgogIDxwYXRoIGQ9Ik0gMTU0IDE2MiBMIDE1MSAxNTgiIHN0cm9rZT0iIzJhMWExMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNIDE1OSAxNTcgTCAxNTcgMTUzIiBzdHJva2U9IiMyYTFhMTAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTSAxNjUgMTU1IEwgMTY0IDE1MSIgc3Ryb2tlPSIjMmExYTEwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxwYXRoIGQ9Ik0gMTcxIDE1NCBMIDE3MSAxNTAiIHN0cm9rZT0iIzJhMWExMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNIDE3NyAxNTYgTCAxNzggMTUyIiBzdHJva2U9IiMyYTFhMTAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTSAxODMgMTU5IEwgMTg1IDE1NiIgc3Ryb2tlPSIjMmExYTEwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgoKICA8IS0tIEV5ZXMgKHJpZ2h0KSAtLT4KICA8ZWxsaXBzZSBjeD0iMjMwIiBjeT0iMTYyIiByeD0iMTYiIHJ5PSIxMSIgZmlsbD0id2hpdGUiLz4KICA8ZWxsaXBzZSBjeD0iMjI4IiBjeT0iMTYzIiByeD0iOSIgcnk9IjkiIGZpbGw9IiMxYTNhNWYiLz4KICA8ZWxsaXBzZSBjeD0iMjI3IiBjeT0iMTYzIiByeD0iNiIgcnk9IjYiIGZpbGw9IiMwYTE2MjgiLz4KICA8ZWxsaXBzZSBjeD0iMjI0IiBjeT0iMTYwIiByeD0iMi41IiByeT0iMi41IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45Ii8+CiAgPGVsbGlwc2UgY3g9IjIzNCIgY3k9IjE2NSIgcng9IjEuNSIgcnk9IjEuNSIgZmlsbD0iIzBFQjg5QSIgb3BhY2l0eT0iMC44Ii8+CiAgPHBhdGggZD0iTSAyMTQgMTYyIFEgMjMwIDE1MiAyNDYgMTYyIiBzdHJva2U9IiMzZDJhMWEiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAyNDYgMTYyIEwgMjQ5IDE1OCIgc3Ryb2tlPSIjMmExYTEwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxwYXRoIGQ9Ik0gMjQxIDE1NyBMIDI0MyAxNTMiIHN0cm9rZT0iIzJhMWExMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNIDIzNSAxNTUgTCAyMzYgMTUxIiBzdHJva2U9IiMyYTFhMTAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTSAyMjkgMTU0IEwgMjI5IDE1MCIgc3Ryb2tlPSIjMmExYTEwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxwYXRoIGQ9Ik0gMjIzIDE1NiBMIDIyMiAxNTIiIHN0cm9rZT0iIzJhMWExMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNIDIxNyAxNTkgTCAyMTUgMTU2IiBzdHJva2U9IiMyYTFhMTAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CgogIDwhLS0gTm9zZSAtLT4KICA8cGF0aCBkPSJNIDIwMCAxNjUgTCAxOTYgMTg4IFEgMjAwIDE5NCAyMDQgMTg4IFoiIGZpbGw9IiNkNDk0NmEiIG9wYWNpdHk9IjAuNSIvPgogIDxlbGxpcHNlIGN4PSIxOTMiIGN5PSIxOTEiIHJ4PSI2IiByeT0iNCIgZmlsbD0iI2Q0OTQ2YSIgb3BhY2l0eT0iMC4zNSIvPgogIDxlbGxpcHNlIGN4PSIyMDciIGN5PSIxOTEiIHJ4PSI2IiByeT0iNCIgZmlsbD0iI2Q0OTQ2YSIgb3BhY2l0eT0iMC4zNSIvPgoKICA8IS0tIFNtaWxlIC0tPgogIDxwYXRoIGQ9Ik0gMTgzIDIwOCBRIDIwMCAyMjAgMjE3IDIwOCIgc3Ryb2tlPSIjYzQ3ODVhIiBzdHJva2Utd2lkdGg9IjIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBMaXBzIC0tPgogIDxwYXRoIGQ9Ik0gMTg1IDIwOCBRIDE5MiAyMDQgMjAwIDIwNSBRIDIwOCAyMDQgMjE1IDIwOCBRIDIwOCAyMTQgMjAwIDIxNSBRIDE5MiAyMTQgMTg1IDIwOCBaIgogICAgICAgIGZpbGw9IiNkNDc4NWEiIG9wYWNpdHk9IjAuODUiLz4KCiAgPCEtLSBIYWlyIGZyb250IGxheWVyIC8gZnJpbmdlIC0tPgogIDxwYXRoIGQ9Ik0gMTE4IDE1NSBRIDExOCAxMTAgMTQ1IDk1IFEgMTcwIDgyIDIwMCA4MCBRIDIzMCA4MiAyNTUgOTUgUSAyODIgMTEwIDI4MiAxNTUKICAgICAgICAgICBRIDI2NSAxMzAgMjQwIDEyMCBRIDIyMCAxMTMgMjAwIDExMyBRIDE4MCAxMTMgMTYwIDEyMCBRIDEzNSAxMzAgMTE4IDE1NSBaIgogICAgICAgIGZpbGw9InVybCgjaGFpckdyYWQpIiBvcGFjaXR5PSIwLjk1Ii8+CgogIDwhLS0gSGFpciBoaWdobGlnaHQgLS0+CiAgPHBhdGggZD0iTSAxNTAgMTAwIFEgMTc1IDg4IDIxMCA5MCBRIDIzNSA5MiAyNTUgMTA1IiBzdHJva2U9IiM2YjRhMmEiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBTdWJ0bGUgZWFyIC0tPgogIDxlbGxpcHNlIGN4PSIxMTgiIGN5PSIxNzgiIHJ4PSIxMCIgcnk9IjE0IiBmaWxsPSIjZTBhMDcwIi8+CiAgPGVsbGlwc2UgY3g9IjI4MiIgY3k9IjE3OCIgcng9IjEwIiByeT0iMTQiIGZpbGw9IiNlMGEwNzAiLz4KCiAgPCEtLSBEYXRhIGdsYXNzZXMgKG9wdGlvbmFsIEFSIGxvb2spIC0tPgogIDxyZWN0IHg9IjE0OCIgeT0iMTUzIiB3aWR0aD0iNDQiIGhlaWdodD0iMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dsYXNzR3JhZCkiIG9wYWNpdHk9IjAuMyIvPgogIDxyZWN0IHg9IjIwOCIgeT0iMTUzIiB3aWR0aD0iNDQiIGhlaWdodD0iMjAiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dsYXNzR3JhZCkiIG9wYWNpdHk9IjAuMyIvPgogIDxsaW5lIHgxPSIxOTIiIHkxPSIxNjMiIHgyPSIyMDgiIHkyPSIxNjMiIHN0cm9rZT0iIzdhYjhlMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPgogIDwhLS0gQVIgZGF0YSBwb2ludCBpbiBnbGFzc2VzIC0tPgogIDxjaXJjbGUgY3g9IjE3NSIgY3k9IjE2MiIgcj0iMiIgZmlsbD0iIzBFQjg5QSIgb3BhY2l0eT0iMC43Ii8+CiAgPGNpcmNsZSBjeD0iMjI1IiBjeT0iMTYyIiByPSIyIiBmaWxsPSIjRjQ3QjIwIiBvcGFjaXR5PSIwLjciLz4KCiAgPCEtLSBCb3R0b20gZ3JhZGllbnQgZmFkZSAtLT4KICA8cmVjdCB4PSIwIiB5PSIzODAiIHdpZHRoPSI0MDAiIGhlaWdodD0iMTQwIiBmaWxsPSJ1cmwoI2JnR3JhZCkiIG9wYWNpdHk9IjAuNiIvPgogIDxyZWN0IHg9IjAiIHk9IjQ0MCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzBhMTYyOCIgb3BhY2l0eT0iMC44Ii8+CgogIDwhLS0gQUkgY2lyY3VpdCBkZWNvcmF0aW9uIG9uIHN1aXQgLS0+CiAgPGNpcmNsZSBjeD0iMTU1IiBjeT0iMzgwIiByPSIzIiBmaWxsPSIjRjQ3QjIwIiBvcGFjaXR5PSIwLjYiLz4KICA8Y2lyY2xlIGN4PSIyNDUiIGN5PSIzODAiIHI9IjMiIGZpbGw9IiMwRUI4OUEiIG9wYWNpdHk9IjAuNiIvPgogIDxsaW5lIHgxPSIxNTUiIHkxPSIzODMiIHgyPSIxNTUiIHkyPSI0MDAiIHN0cm9rZT0iI0Y0N0IyMCIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iMjQ1IiB5MT0iMzgzIiB4Mj0iMjQ1IiB5Mj0iNDAwIiBzdHJva2U9IiMwRUI4OUEiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC40Ii8+CgogIDwhLS0gT3JhbmdlIHRlYWwgc2NhbiBsaW5lIGVmZmVjdCBhdCBib3R0b20gLS0+CiAgPHJlY3QgeD0iMCIgeT0iNDYwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIiIGZpbGw9IiNGNDdCMjAiIG9wYWNpdHk9IjAuMyIvPgoKPC9zdmc+" alt="Claudia Cl.AI.re">
+      <div id="hn">
+        <div class="n1">Claudia Cl.<span class="ai">AI</span>.re</div>
+        <div class="n2">AI-native Levenscoach &middot; Hypotheekshop.ai</div>
+      </div>
+    </div>
+    <div id="wf">
+      <div class="wb" style="animation-delay:.0s"></div>
+      <div class="wb" style="animation-delay:.1s"></div>
+      <div class="wb" style="animation-delay:.2s"></div>
+      <div class="wb" style="animation-delay:.3s"></div>
+      <div class="wb" style="animation-delay:.4s"></div>
+      <div class="wb" style="animation-delay:.5s"></div>
+      <div class="wb" style="animation-delay:.4s"></div>
+      <div class="wb" style="animation-delay:.3s"></div>
+      <div class="wb" style="animation-delay:.2s"></div>
+      <div class="wb" style="animation-delay:.1s"></div>
+    </div>
+  </div>
+
+  <div class="db" id="db1" style="top:28%;left:6%"><div class="dbl" id="db1l">Status</div><div class="dbv" id="db1v">&#x25CF; Online</div></div>
+  <div class="db" id="db2" style="top:40%;right:5%"><div class="dbl" id="db2l">Score</div><div class="dbv" id="db2v">9.8 &#x2605;</div></div>
+  <div class="db" id="db3" style="top:20%;right:8%"><div class="dbl" id="db3l">Aanbieders</div><div class="dbv" id="db3v">300+</div></div>
+
+  <div id="sub"><div id="st2"></div></div>
+
+  <div id="pw">
+    <div id="pt"><div id="pf"></div></div>
+    <div id="pips"></div>
+  </div>
+
+  <div id="ctrls">
+    <button class="cb" id="btnPrev">&larr;</button>
+    <button class="cb" id="btnPlay">&#9654; Afspelen</button>
+    <button class="cb" id="btnNext">&rarr;</button>
+    <span id="td">00:00 / 04:25</span>
+  </div>
+
+  <div id="outro">
+    <div id="ol">Hypotheekshop<span>.ai</span></div>
+    <div id="og">&ldquo;Tijd voor jouw plan. Nu slimmer dan ooit.&rdquo;</div>
+    <a href="claudia-claire.html" id="oc">Spreek Claudia Cl.<strong>AI</strong>.re &rarr;</a>
+    <button id="or" onclick="restart()">&#8635; Opnieuw afspelen</button>
+  </div>
+
+  <div id="gate">
+    <div id="gl">Hypotheekshop<span class="ai">.ai</span></div>
+    <div id="gsub">Claudia Cl.<strong style="color:#F47B20">AI</strong>.re vertelt over<br>de toekomst van financi&euml;el advies</div>
+    <button id="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+    <div id="gtitle">Klik om te starten</div>
+    <div id="gdur">ca. 4:25 min &mdash; stem: Nederlands</div>
+    <div id="ginfo">Werkt het beste in Chrome of Edge op Windows/Mac</div>
+  </div>
+</div>
+
+<script>
+var SC = [
+  { num:"01", title:"OPENING", sub:"De toekomst van financieel advies", dur:18000,
+    lines:[
+      {t:1400, d:2800, txt:"Goedendag."},
+      {t:5200, d:3000, txt:"Ik ben Claudia Cl.AI.re."},
+      {t:9200, d:4500, txt:"Jouw AI-native financieel levenscoach\nbij De Hypotheekshop."},
+      {t:14500,d:5000, txt:"En ik wil je iets eerlijks vertellen\nover de toekomst van financieel advies."}
+    ],
+    badges:[]
+  },
+  { num:"02", title:"DE WERELD VERANDERT", sub:"Drie schokken die alles veranderen", dur:24000,
+    lines:[
+      {t:1200, d:3500, txt:"Nederland in 2036 is fundamenteel anders."},
+      {t:5800, d:4000, txt:"**Één op de vier Nederlanders** is gepensioneerd.\nDe grootste vermogensoverdracht ooit."},
+      {t:11000,d:4000, txt:"De hypotheekrenteaftrek is uitgewerkt.\nKopen of huren — eindelijk een échte vraag."},
+      {t:16200,d:4200, txt:"En er zijn nu **300+ hypotheekverstrekkers**\nactief in Nederland. Van Singapore tot Sevilla."},
+      {t:21500,d:4000, txt:"Meer keuze. Meer complexiteit.\nMeer reden om iemand te hebben die voor jou kijkt."}
+    ],
+    badges:[
+      {id:"db1",l:"65-plussers",v:"26%",delay:4500},
+      {id:"db2",l:"Vermogensoverdracht",v:"€ 1.200 mrd",delay:10000},
+      {id:"db3",l:"Aanbieders NL",v:"300+",delay:15500}
+    ]
+  },
+  { num:"03", title:"CL.AI.RE FINANCE", sub:"Wat ik wel — en niet — kan", dur:24000,
+    lines:[
+      {t:1200, d:2800, txt:"En dan is er Cl.AI.re Finance."},
+      {t:5200, d:4200, txt:"Dat ben ik. En ik ben niet wat je denkt."},
+      {t:10500,d:4500, txt:"Ik vergelijk **300 aanbieders in seconden**.\nIk analyseer jouw pensioenpotje, hypotheek én inkomen."},
+      {t:16200,d:4000, txt:"Ik zie verbanden die jij nooit ziet —\nomdat niemand de tijd heeft ze bij te houden."},
+      {t:21300,d:4500, txt:"Maar ik weet ook wat ik **níet** kan.\nEn dat is misschien wel het belangrijkste."}
+    ],
+    badges:[
+      {id:"db1",l:"Analysetijd",v:"< 30 sec",delay:9500},
+      {id:"db2",l:"Aanbieders",v:"300+",delay:15000},
+      {id:"db3",l:"Beschikbaar",v:"24 / 7",delay:1000}
+    ]
+  },
+  { num:"04", title:"DE MENSELIJKE COACH", sub:"Onvervangbaar dankzij AI", dur:22000,
+    lines:[
+      {t:1200, d:3500, txt:"Ik kan niet horen dat je stem trilt\nals je vertelt dat je bang bent."},
+      {t:6000, d:4000, txt:"Ik kan niet een kopje koffie inschenken\nen zeggen: vertel me eens — wat is jouw plan?"},
+      {t:11200,d:3500, txt:"**Dát is het werk van een mens.**"},
+      {t:15800,d:4000, txt:"In 160 vestigingen door heel Nederland\nzitten mensen die jou kennen bij naam."},
+      {t:21000,d:4500, txt:"Zij bellen vóórdat jij belt.\nDat is geen service. Dat is vertrouwen."}
+    ],
+    badges:[
+      {id:"db1",l:"Vestigingen",v:"160+",delay:7000},
+      {id:"db2",l:"Score",v:"9.8 ★",delay:14000},
+      {id:"db3",l:"Klanten",v:"27.000+",delay:19000}
+    ]
+  },
+  { num:"05", title:"JOUW PLAN", sub:"Hypotheek als kapstok", dur:20000,
+    lines:[
+      {t:1400, d:3000, txt:"De hypotheek is het startpunt."},
+      {t:5600, d:4500, txt:"Maar wat ik doe is jouw **hele financiële leven**\nin één oogopslag laten zien."},
+      {t:11400,d:4500, txt:"Hypotheek. Pensioen. Inkomen. Verzekering.\n**Allemaal verbonden. Allemaal voor jou.**"},
+      {t:17200,d:4500, txt:"Niet als losse producten.\nMaar als één persoonlijk plan."}
+    ],
+    badges:[
+      {id:"db1",l:"Hypotheek",v:"Kapstok",delay:3000},
+      {id:"db2",l:"Pensioen",v:"Wtp 2027",delay:9000},
+      {id:"db3",l:"FIDA",v:"Open Finance",delay:14000}
+    ]
+  },
+  { num:"06", title:"WAT WIJ BELOVEN", sub:"Al 45 jaar. Nu slimmer.", dur:26000,
+    lines:[
+      {t:1400, d:3500, txt:"De wereld heeft niet te weinig data."},
+      {t:6200, d:4500, txt:"De wereld heeft te weinig mensen die\ndata **begrijpelijk maken**."},
+      {t:12000,d:3800, txt:"Die **eerlijk zijn** over wat ze niet weten."},
+      {t:17000,d:4000, txt:"En er **'s avonds nog voor je zijn**."},
+      {t:22500,d:5000, txt:"Dat doen wij. Al 45 jaar.\n**Dankzij** de technologie. Niet ondanks."}
+    ],
+    badges:[
+      {id:"db1",l:"Opgericht",v:"1991",delay:1000},
+      {id:"db2",l:"Ervaring",v:"45 jaar",delay:11000},
+      {id:"db3",l:"Score",v:"9.8 ★",delay:18000}
+    ]
+  },
+  { num:"07", title:"TIJD VOOR JOUW PLAN", sub:"Hypotheekshop.ai", dur:11000,
+    lines:[
+      {t:1000, d:2800, txt:"Ik ben Claudia Cl.AI.re."},
+      {t:4800, d:3000, txt:"En dit is Hypotheekshop.ai."},
+      {t:8500, d:6000, txt:"**Tijd voor jouw plan.**", big:true}
+    ],
+    badges:[]
+  }
+];
+
+var TOTAL_MS=0; SC.forEach(function(s){TOTAL_MS+=s.dur;});
+var cur=0,playing=false,globalMs=0;
+var lineTimers=[],badgeTimeouts=[],sceneTimeout=null,progInterval=null;
+var speaking=false;
+
+// Build pips
+var pipsEl=document.getElementById('pips');
+SC.forEach(function(s,i){
+  var p=document.createElement('div');
+  p.className='pip'+(i===0?' active':'');
+  p.id='pip'+i;
+  p.innerHTML='<div class="pipdot"></div><div class="piplbl">'+s.num+'</div>';
+  (function(idx){p.onclick=function(){if(playing)goScene(idx);};})(i);
+  pipsEl.appendChild(p);
+});
+
+function fmt(ms){var s=Math.floor(ms/1000);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+function clearTimers(){lineTimers.forEach(clearTimeout);badgeTimeouts.forEach(clearTimeout);lineTimers=[];badgeTimeouts=[];if(sceneTimeout)clearTimeout(sceneTimeout);sceneTimeout=null;}
+function flash(){var f=document.createElement('div');f.className='flash';document.getElementById('player').appendChild(f);setTimeout(function(){f.remove();},600);}
+function setPips(idx){SC.forEach(function(_,i){var p=document.getElementById('pip'+i);p.className='pip'+(i===idx?' active':i<idx?' done':'');});}
+function showBadge(id,label,val){var el=document.getElementById(id);if(!el)return;el.classList.remove('show');el.querySelector('.dbl').textContent=label;el.querySelector('.dbv').textContent=val;setTimeout(function(){el.classList.add('show');},50);}
+function hideAllBadges(){['db1','db2','db3'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.remove('show');});}
+
+function setSub(text,big){
+  var el=document.getElementById('st2');
+  el.classList.remove('on');
+  setTimeout(function(){
+    el.innerHTML=text.replace(/\*\*([^*]+)\*\*/g,'<span class="hl">$1</span>');
+    el.style.fontSize=big?'clamp(22px,4vw,40px)':'';
+    el.style.fontWeight=big?'900':'';
+    el.style.color=big?'#F47B20':'white';
+    el.classList.add('on');
+    doSpeak(text);
+  },60);
+}
+function clearSub(){document.getElementById('st2').classList.remove('on');stopSpeak();}
+
+// Speech
+var synth=window.speechSynthesis;
+var nlVoice=null,voicesLoaded=false;
+function loadVoices(){
+  if(voicesLoaded)return;
+  var voices=synth.getVoices();
+  if(!voices.length)return;
+  voicesLoaded=true;
+  var nl=voices.filter(function(v){return v.lang.indexOf('nl')===0;});
+  if(nl.length){
+    var maleNames=['ruud','jan','xander','frank','thomas','daniel','james','mark','male'];
+    nlVoice=nl.find(function(v){var n=v.name.toLowerCase();return maleNames.some(function(m){return n.indexOf(m)!==-1;});})||nl[nl.length-1];
+  } else {
+    nlVoice=voices.find(function(v){var n=v.name.toLowerCase();return ['david','daniel','mark','james'].some(function(m){return n.indexOf(m)!==-1;});})||voices[0];
+  }
+}
+if(synth.onvoiceschanged!==undefined)synth.onvoiceschanged=loadVoices;
+setTimeout(loadVoices,300);
+
+function doSpeak(raw){
+  if(!synth||!speaking)return;
+  var clean=raw.replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\n/g,' ');
+  synth.cancel();
+  var u=new SpeechSynthesisUtterance(clean);
+  u.lang='nl-NL';u.rate=0.87;u.pitch=0.8;u.volume=1;
+  loadVoices();if(nlVoice)u.voice=nlVoice;
+  synth.speak(u);
+}
+function stopSpeak(){if(synth)synth.cancel();}
+
+// Ambient audio
+var actx=null,gainN=null;
+function startAmbient(){
+  if(actx)return;
+  try{
+    actx=new(window.AudioContext||window.webkitAudioContext)();
+    gainN=actx.createGain();gainN.gain.setValueAtTime(0,actx.currentTime);
+    gainN.gain.linearRampToValueAtTime(0.02,actx.currentTime+4);
+    gainN.connect(actx.destination);
+    [[65.4,0.04],[130.8,0.02],[196.0,0.01]].forEach(function(p){
+      var o=actx.createOscillator(),g=actx.createGain();
+      o.type='sine';o.frequency.value=p[0];g.gain.value=p[1];
+      o.connect(g);g.connect(gainN);o.start();
+    });
+  }catch(e){}
+}
+function stopAmbient(){if(gainN)try{gainN.gain.linearRampToValueAtTime(0,actx.currentTime+0.5);}catch(e){}stopSpeak();}
+
+function goScene(idx){
+  if(idx>=SC.length){endVideo();return;}
+  clearTimers();clearSub();hideAllBadges();
+  cur=idx;
+  var s=SC[idx];
+  document.getElementById('sn').textContent='SC\u00c8NE '+s.num;
+  document.getElementById('st').textContent=s.title;
+  document.getElementById('ss').textContent=s.sub;
+  setPips(idx);flash();
+  s.lines.forEach(function(line){
+    var t1=setTimeout(function(){setSub(line.txt,line.big||false);},line.t);
+    var t2=setTimeout(clearSub,line.t+line.d);
+    lineTimers.push(t1,t2);
+  });
+  (s.badges||[]).forEach(function(b){
+    var bt=setTimeout(function(){showBadge(b.id,b.l,b.v);},b.delay);
+    badgeTimeouts.push(bt);
+  });
+  sceneTimeout=setTimeout(function(){goScene(idx+1);},s.dur);
+}
+
+function startProg(){
+  if(progInterval)clearInterval(progInterval);
+  progInterval=setInterval(function(){
+    if(!playing)return;
+    globalMs+=120;
+    var pct=Math.min(100,(globalMs/TOTAL_MS)*100);
+    document.getElementById('pf').style.width=pct+'%';
+    document.getElementById('td').textContent=fmt(globalMs)+' / '+fmt(TOTAL_MS);
+  },120);
+}
+
+function endVideo(){
+  clearTimers();clearSub();stopAmbient();
+  if(progInterval)clearInterval(progInterval);
+  document.getElementById('pf').style.width='100%';
+  setTimeout(function(){document.getElementById('outro').classList.add('on');},600);
+}
+
+function restart(){
+  document.getElementById('outro').classList.remove('on');
+  globalMs=0;playing=true;speaking=true;
+  document.getElementById('btnPlay').textContent='\u23F8 Pauzeer';
+  startAmbient();goScene(0);startProg();
+}
+
+// Start on gate click
+document.getElementById('gate').addEventListener('click',function(){
+  this.classList.add('out');
+  playing=true;speaking=true;
+  document.getElementById('btnPlay').textContent='\u23F8 Pauzeer';
+  startAmbient();loadVoices();
+  setTimeout(function(){goScene(0);startProg();},800);
+});
+
+document.getElementById('btnPlay').onclick=function(e){
+  e.stopPropagation();playing=!playing;speaking=playing;
+  this.textContent=playing?'\u23F8 Pauzeer':'\u25B6 Afspelen';
+  if(playing){startAmbient();goScene(cur);startProg();}
+  else{clearTimers();clearSub();stopAmbient();}
+};
+document.getElementById('btnNext').onclick=function(e){
+  e.stopPropagation();
+  if(!playing){playing=true;speaking=true;startAmbient();startProg();document.getElementById('btnPlay').textContent='\u23F8 Pauzeer';}
+  var next=Math.min(cur+1,SC.length-1);
+  globalMs=0;for(var i=0;i<next;i++)globalMs+=SC[i].dur;
+  goScene(next);
+};
+document.getElementById('btnPrev').onclick=function(e){
+  e.stopPropagation();
+  if(!playing){playing=true;speaking=true;startAmbient();startProg();document.getElementById('btnPlay').textContent='\u23F8 Pauzeer';}
+  var prev=Math.max(cur-1,0);
+  globalMs=0;for(var i=0;i<prev;i++)globalMs+=SC[i].dur;
+  goScene(prev);
+};
+document.getElementById('pt').onclick=function(e){
+  var rect=this.getBoundingClientRect(),pct=(e.clientX-rect.left)/rect.width;
+  globalMs=pct*TOTAL_MS;
+  var acc=0;
+  for(var i=0;i<SC.length;i++){if(acc+SC[i].dur>globalMs){goScene(i);break;}acc+=SC[i].dur;}
+};
+document.addEventListener('keydown',function(e){
+  if(e.code==='Space'){e.preventDefault();document.getElementById('btnPlay').click();}
+  if(e.code==='ArrowRight')document.getElementById('btnNext').click();
+  if(e.code==='ArrowLeft')document.getElementById('btnPrev').click();
+});
+</script>
+</body>
+</html>
